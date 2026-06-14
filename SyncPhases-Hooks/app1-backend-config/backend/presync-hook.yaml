@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: presync-db-migration
+  namespace: app1-ns
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: migrate
+        image: busybox
+        command:
+          - sh
+          - -c
+          - |
+            echo "Running DB migrations..."
+            echo "Migration completed successfully."

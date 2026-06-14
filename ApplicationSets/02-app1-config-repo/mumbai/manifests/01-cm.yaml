@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app1-mumbai-cm
+  namespace: app1-mumbai-ns
+data:
+  index.html: |
+    <html>
+      <head><title>Cloud With VarJosh</title></head>
+      <body>
+        <h1>ApplicationSets Demo</h1>
+        <p>Region: Mumbai (ap-south-1)</p>
+        <p>This deployment serves users in India.</p>
+      </body>
+    </html>

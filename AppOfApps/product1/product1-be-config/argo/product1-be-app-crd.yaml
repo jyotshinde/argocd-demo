@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: product1-be
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/CloudWithVarJosh/product1-be-config
+    targetRevision: main
+    path: manifests-be
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: product1-ns
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
+      - ApplyOutOfSyncOnly=true
+
+      
