@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app1
-  namespace: argocd
+  namespace: argo
 spec:
   project: default
   source:
-    repoURL: https://github.com/CloudWithVarJosh/cwvj-app1-config.git
+    repoURL: https://github.com/jyotshinde/argocd-demo.git
     targetRevision: HEAD
     path: .
   destination:

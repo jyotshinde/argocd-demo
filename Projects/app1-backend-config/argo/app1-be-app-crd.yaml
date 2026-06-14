@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app1-be-app
-  namespace: argocd
+  namespace: argo
 spec:
   project: app1-project
   source:
-    repoURL: https://github.com/CloudWithVarJosh/app1-backend-config.git
+    repoURL: https://github.com/jyotshinde/argocd-demo.git
     targetRevision: HEAD
     path: backend
   destination:
