@@ -1,0 +1,17 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: cwvj-nvirginia
+  region: us-east-1
+  tags:
+    project: applicationsets-demo
+    region: nvirginia
+
+vpc:
+  cidr: 10.20.0.0/16
+
+managedNodeGroups:
+  - name: cwvj-nvirginia-ng
+    instanceType: t3.small
+    desiredCapacity: 1

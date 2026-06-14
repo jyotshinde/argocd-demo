@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-deploy
+  namespace: product1-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fe
+  template:
+    metadata:
+      labels:
+        app: fe
+    spec:
+      containers:
+        - name: fe-container
+          image: cloudwithvarjosh/product1-fe:v1.0.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 4000

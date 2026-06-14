@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1-mumbai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1-mumbai
+  template:
+    metadata:
+      labels:
+        app: app1-mumbai
+    spec:
+      containers:
+      - name: app1
+        image: nginx

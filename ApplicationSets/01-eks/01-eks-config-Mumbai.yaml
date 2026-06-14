@@ -1,0 +1,17 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: cwvj-mumbai
+  region: ap-south-1
+  tags:
+    project: applicationsets-demo
+    region: mumbai
+
+vpc:
+  cidr: 10.10.0.0/16
+
+managedNodeGroups:
+  - name: cwvj-mumbai-ng
+    instanceType: t3.small
+    desiredCapacity: 2
